@@ -1,0 +1,147 @@
+.page__unit-type {
+	padding: calc(#{$header-height} + 2rem) 0 0 0;
+
+	h2.title {
+		flex: 0 0 100%;
+		font-size: 36px;
+		line-height: 1em;
+	}
+
+	.page-intro {
+		h1 {
+			font-size: 12vw;
+			line-height: 1em;
+			margin: 0;
+			text-align: right;
+		}
+	}
+
+	.feature-image {
+		margin: 0 0 5rem 0;
+	}
+
+	.plan-type-list {
+		margin: 0 0 2rem 0;
+
+		@media #{$screen-md-min} {
+			margin-bottom: 5rem;
+		}
+	}
+
+	.actions {
+		margin: 0 0 5rem 0;
+		text-align: center;
+
+		a {
+			width: 300px;
+			margin: 0 0 0 auto;
+
+			svg {
+				width: 20px;
+				height: auto;
+				display: block;
+				margin: 0 0 0 auto;
+
+				@media #{$screen-md-min} {
+					width: 40px;
+				}
+			}
+		}
+	}
+
+	.features {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 auto 2rem auto;
+
+		.column {
+			flex: 0 0 100%;
+			margin: 0 0 3rem 0;
+
+			@media #{$screen-md-min} {
+				margin: 0;
+				flex: 0 0 calc(100% / 3);
+			}
+
+			&:nth-child(3) {
+				@media #{$screen-md-min} {
+					padding: 0 1rem;
+				}
+			}
+
+			> figure {
+				margin: 0 0 1rem 0;
+				overflow: hidden;
+				width: 100%;
+				height: 12rem;
+				background-size: cover;
+				background-position: bottom;
+			}
+
+			hr {
+				margin: 0 0 1rem 0;
+				border-color: $color-body;
+			}
+
+			.title {
+				font-size: 36px;
+				line-height: 1em;
+				margin: 0 0 1rem 0;
+				font-weight: 100;
+				display: block;
+			}
+
+			p {
+				font-weight: 100;
+				font-size: 18px;
+				line-height: 1.5em;
+				margin: 0 0 1rem 0;
+
+				@media #{$screen-md-min} {
+					padding-right: 3rem;
+				}
+
+				&.no-mb {
+					margin-bottom: 0.5rem;
+				}
+
+				strong {
+					font-weight: 500;
+				}
+			}
+
+			ul {
+				margin: 0;
+				padding: 0 3rem 0 0.75rem;
+				font-weight: 100;
+				font-size: 18px;
+				line-height: 1.5em;
+
+				&.no-bull {
+					list-style-type: none;
+					padding-left: 0;
+
+					li {
+						display: flex;
+						align-items: center;
+
+						figure {
+							margin: 0 1rem 0 0;
+
+							img {
+								width: 50px;
+								height: auto;
+								display: block;
+								margin: 0;
+							}
+						}
+					}
+				}
+
+				li {
+					margin: 0 0 0.5rem 0;
+				}
+			}
+		}
+	}
+}

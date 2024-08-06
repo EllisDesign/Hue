@@ -1,0 +1,276 @@
+.global__footer {
+	position: relative;
+	background: $brand-light-peach;
+	z-index: 2;
+	overflow: hidden;
+
+	&[data-slug='/ipad/register'] {
+		display: none;
+	}
+
+	.gradient-bg {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		//background: linear-gradient(20deg, rgba($brand-blue, 1) 0%, rgba($brand-blue, 0) 50%);
+		background: linear-gradient(rgba($brand-blue, 0) 0%, rgba($brand-blue, 1) 100%);
+		z-index: 0;
+	}
+
+	&__register {
+		display: flex;
+		justify-content: space-between;
+		margin: 0 0 5rem 0;
+		z-index: 1;
+		position: relative;
+
+		h2 {
+			flex: 0 0 25%;
+		}
+
+		form {
+			flex: 0 0 75%;
+			max-width: $max-width-narrow;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			align-items: flex-start;
+
+			input,
+			select {
+				flex: 0 0 calc(50% - 0.5rem);
+				margin: 0 0 1rem 0;
+			}
+
+			button[type='submit'] {
+				border-bottom: solid 1px $color-body;
+				margin: 1rem 0 0 0;
+			}
+		}
+	}
+
+	&__typical {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		z-index: 1;
+		position: relative;
+
+		.top {
+			flex: 0 0 100%;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			padding: 1rem 1rem 0 1rem;
+
+			@media #{$screen-md-min} {
+				padding: 2rem;
+			}
+		}
+
+		.top-left {
+			flex: 0 0 25%;
+			margin: 1rem 0 2rem 0;
+
+			@media #{$screen-md-min} {
+				margin: 0;
+			}
+
+			svg {
+				flex: 0 0 100%;
+				height: auto;
+				display: block;
+
+				&.marcon {
+					width: 200px;
+					margin: 0 0 2rem 0;
+				}
+
+				&.building {
+					width: 200px;
+
+					@media #{$screen-md-min} {
+						width: 250px;
+					}
+				}
+
+				path {
+					fill: $color-body;
+				}
+			}
+		}
+
+		.top-right {
+			flex: 0 0 100%;
+			max-width: 600px;
+
+			@media #{$screen-md-min} {
+				flex: 0 0 75%;
+			}
+
+			nav {
+				border-top: solid 1px $color-body;
+
+				.row {
+					border-bottom: solid 1px $color-body;
+					display: flex;
+					flex-wrap: wrap;
+					padding: 1rem 0;
+
+					&:last-child {
+						border: none;
+					}
+				}
+
+				a {
+					text-decoration: none;
+					display: block;
+					line-height: 1.25em;
+					font-weight: 100;
+					margin: 0 1rem 0 0;
+					flex: 0 0 100%;
+					font-size: 0.8rem;
+
+					@media #{$screen-md-min} {
+						flex: 0 0 auto;
+					}
+
+					&:first-child {
+						&:after {
+							content: '';
+							width: 10px;
+							height: 10px;
+							background: black;
+							display: none;
+							margin: 0 0 0 1rem;
+
+							@media #{$screen-md-min} {
+								display: inline-block;
+							}
+						}
+					}
+
+					&:last-child {
+						margin-right: 0;
+					}
+				}
+			}
+		}
+
+		.bottom {
+			flex: 0 0 100%;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			padding: 0 1rem 2rem 1rem;
+
+			@media #{$screen-md-min} {
+				padding: 3rem 2rem 2rem 2rem;
+			}
+
+			.left {
+				flex: 0 0 100%;
+				display: flex;
+				flex-wrap: wrap;
+
+				@media #{$screen-sm-min} {
+					flex: 1;
+					padding-right: 3rem;
+				}
+
+				a {
+					display: block;
+					text-decoration: none;
+					flex: 0 0 100%;
+
+					@media #{$screen-md-min} {
+						flex: 0 0 auto;
+					}
+
+					&.phone,
+					&.email {
+						font-size: 1rem;
+						line-height: 1em;
+						font-weight: 500;
+
+						@media #{$screen-md-min} {
+							font-size: 2.5rem;
+						}
+					}
+
+					&.email {
+						margin: 1rem 0 0 0;
+						font-weight: 400;
+						text-transform: uppercase;
+						font-size: 1.25rem;
+
+						@media #{$screen-md-min} {
+							margin: 0;
+							font-size: 1.75rem;
+						}
+					}
+				}
+
+				p {
+					flex: 0 0 100%;
+					margin: 3rem 0 0 0;
+					font-size: 0.6rem;
+					line-height: 1.5em;
+					font-weight: 100;
+				}
+
+				.nav-util {
+					flex: 0 0 100%;
+					margin: auto 0 0 0;
+					display: flex;
+					flex-wrap: wrap;
+
+					a,
+					button,
+					span {
+						font-size: 0.6rem;
+						display: block;
+						margin: 0 1.5rem 0 0;
+						text-transform: uppercase;
+						line-height: 1.25em;
+					}
+
+					.bullet {
+						display: none;
+					}
+				}
+			}
+
+			.right {
+				flex: 0 0 100%;
+				margin: 2rem 0 0 0;
+
+				@media #{$screen-sm-min} {
+					display: flex;
+				}
+
+				@media #{$screen-md-min} {
+					margin: 0 0 0 auto;
+					max-width: 600px;
+				}
+
+				span {
+					margin: 0 0 0.5rem 0;
+					display: block;
+				}
+
+				p {
+					font-size: 0.8rem;
+					line-height: 1.25em;
+					font-weight: 100;
+
+					&:last-child {
+						margin: 0 0 0 0;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,156 @@
+.page__inside__scroll-content {
+	padding: 0 0 5rem 0;
+
+	.block {
+		display: flex;
+		flex-wrap: wrap;
+		flex: 0 0 100%;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		&:nth-child(even) {
+			> * {
+				margin-left: auto;
+			}
+		}
+
+		&--display-text {
+			margin-top: 8rem;
+
+			p {
+				line-height: 1.25em;
+				font-size: 1.25rem;
+
+				@media #{$screen-md-min} {
+					font-size: 60px;
+					line-height: 1.1em;
+					max-width: 75%;
+				}
+			}
+		}
+
+		&--image {
+			figure {
+				flex: 0 0 100%;
+
+				@media #{$screen-sm-min} {
+					flex: 0 0 40%;
+				}
+
+				p {
+					&.caption {
+						margin-top: 0.5rem;
+						@extend .text--xsm;
+					}
+				}
+			}
+		}
+
+		&--extended {
+			figure {
+				flex: 0 0 60%;
+			}
+
+			p {
+				max-width: 75%;
+			}
+		}
+
+		&--full {
+			margin:0 0 2rem 0;
+			
+			figure {
+				flex: 0 0 100%;
+			}
+
+			p {
+				max-width: 50%;
+			}
+		}
+
+		&--unit-type {
+			flex: 0 0 100%;
+			display: flex;
+
+			&:nth-child(odd) {
+				margin: 3rem 0;
+
+				@media #{$screen-md-min} {
+					margin: 7rem 0 0 0;
+				}
+			}
+
+			aside {
+				flex: 0 0 100%;
+
+				h2 {
+					margin-bottom: 0.5rem;
+				}
+
+				p {
+					margin: 0 0 1rem 0;
+					line-height: 1.25em;
+
+					@media #{$screen-md-min} {
+						margin-right: 4rem;
+					}
+				}
+			}
+
+			figure {
+				margin: 2rem 0 0 0;
+				position: relative;
+				width: 100%;
+				max-height: 600px;
+				overflow: hidden;
+				background-size: cover;
+				background-position: center;
+
+				img {
+					object-fit: cover;
+					object-position: center;
+				}
+			}
+
+			.btn {
+				margin: 0;
+				width: 100%;
+				max-width: 450px;
+			}
+		}
+
+		&--image-grid {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+
+			figure {
+				width: 100%;
+				padding-top: 33.333%;
+				margin-left: 0 !important;
+				overflow: hidden;
+				position: relative;
+
+				@media #{$screen-sm-min} {
+					width: calc((100% / 3) - 1rem);
+				}
+
+				p {
+					font-size: 0.8rem;
+				}
+
+				img {
+					position: absolute;
+					top: 0;
+					left: 0;
+					object-fit: cover;
+					object-position: center;
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
+	}
+}

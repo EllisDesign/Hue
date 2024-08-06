@@ -1,0 +1,150 @@
+.page__design-summary {
+	.section-intro {
+		height: 80vh;
+	}
+
+	.top-down {
+		position: relative;
+
+		.hotspots {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+
+			.hotspot {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate3d(-50%, -50%, 0);
+				width: 400px;
+				z-index: 2;
+
+				&:hover {
+					.tooltip {
+						opacity: 1;
+						transform: translateY(0);
+					}
+				}
+			}
+
+			.tooltip {
+				margin: 2.5rem 0;
+				padding: 0.3rem;
+				background: rgba(white, 0.5);
+				backdrop-filter: blur(10px);
+				transition: all 0.2s ease;
+				color: white;
+				display: flex;
+				opacity: 0;
+				transform: translateY(20px);
+
+				&:after {
+					content: '';
+					position: absolute;
+					bottom: 0;
+					left: 50%;
+					transform: translate3d(-50%, 100%, 0);
+					width: 0;
+					height: 0;
+					border-left: 10px solid transparent;
+					border-right: 10px solid transparent;
+					border-top: 15px solid rgba(white, 0.5);
+					backdrop-filter: blur(10px);
+				}
+
+				figure {
+					flex: 0 0 175px;
+
+					img {
+						width: 100%;
+						height: auto;
+						display: block;
+						margin: 0;
+					}
+				}
+
+				aside {
+					flex: 0 0 calc(100% - 175px);
+					padding: 0 2rem 0 1rem;
+					display: flex;
+					flex-direction: column;
+
+					.title {
+						font-size: 0.8rem;
+						line-height: 1.25em;
+						font-weight: 100;
+						display: block;
+					}
+
+					.btn__view-gallery {
+						border-bottom: solid 1px white;
+						font-size: 0.8rem;
+						line-height: 1.75em;
+						color: white;
+						margin: auto auto 0.5rem 0;
+						padding: 0;
+						text-align: left;
+					}
+				}
+			}
+		}
+
+		.base-image {
+			position: relative;
+			overflow: hidden;
+			z-index: 0;
+			line-height: 0;
+		}
+	}
+}
+
+.global__overlay__design-summary {
+	&.wrap--grid {
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		max-width: 1100px;
+		margin: 5rem auto 0 auto;
+		padding: 0 1rem 10rem 1rem;
+		grid-gap: 5rem 7rem;
+
+		@media #{$screen-md-min} {
+			grid-template-columns: repeat(2, 1fr);
+
+			padding: 0 0 10rem 0;
+		}
+	}
+
+	article {
+		&:nth-child(even) {
+			@media #{$screen-md-min} {
+				margin-top: 5rem;
+			}
+		}
+
+		p {
+			font-weight: 100;
+			line-height: 1.3em;
+			margin: 0;
+		}
+
+		figure {
+			overflow: hidden;
+			margin: 0 0 1rem 0;
+		}
+
+		.date,
+		.account {
+			font-size: 0.7rem;
+			line-height: 1em;
+			color: $color-grey-500;
+			font-weight: 100;
+			margin: 0 0 0.3rem 0;
+		}
+	}
+
+	.space {
+		height: 5rem;
+	}
+}

@@ -1,0 +1,29 @@
+.page__building-for-life {
+	.section-intro {
+		height: 80vh;
+	}
+
+	.copy {
+		margin: 5rem 0;
+	}
+
+	.image-grid {
+		.wrap--wide {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+
+			figure {
+				width: 100%;
+
+				@media #{$screen-sm-min} {
+					width: calc((100% / 3) - 1rem);
+				}
+
+				p {
+					font-size: 0.8rem;
+				}
+			}
+		}
+	}
+}

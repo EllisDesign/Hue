@@ -1,0 +1,60 @@
+.page__interior-architecture {
+	.section-intro {
+		height: 80vh;
+	}
+
+	.page-intro {
+		margin-top: 2.5rem;
+		margin-bottom: 2.5rem;
+
+		@media #{$screen-md-min} {
+			margin-top: 5rem;
+		}
+
+		p {
+			margin: 0;
+		}
+	}
+
+	.page__inside__scroll-content {
+		.wrap--grid {
+			display: grid;
+			gap: 0 5rem;
+			align-items: flex-start;
+
+			&[data-cols='2'] {
+				grid-template-columns: repeat(1, 1fr);
+
+				@media #{$screen-md-min} {
+					grid-template-columns: repeat(2, 1fr);
+				}
+			}
+
+			.block--display-text {
+				@media #{$screen-md-min} {
+					grid-column: 1 / span 2;
+				}
+			}
+		}
+	}
+
+	.btn__home-selector-cta {
+		width: 100%;
+		margin: 3rem 0 0 0;
+
+		@media #{$screen-md-min} {
+			width: 400px;
+		}
+
+		svg {
+			width: 40px;
+			height: auto;
+			display: none;
+			margin: 0 0 0 auto;
+
+			@media #{$screen-md-min} {
+				display: block;
+			}
+		}
+	}
+}

@@ -1,0 +1,271 @@
+.page__home-selection {
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+
+	.visuals {
+		width: calc(100% - 450px);
+		height: 100vh;
+
+		&[data-fixed='true'] {
+			position: fixed;
+			top: 0;
+			left: 0;
+		}
+
+		&[data-fixed='false'] {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+		}
+
+		figure {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0;
+			transition: opacity 0.5s ease;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding-top: $header-height;
+
+			&[data-active='true'] {
+				opacity: 1;
+			}
+
+			&[data-group='layout'] {
+				background: darken($brand-light-peach, 3%);
+			}
+
+			&[data-group='colourScheme'] {
+				.bg-image {
+					background-position: center left;
+				}
+			}
+
+			&[data-group='millwork'] {
+				.half-images {
+					.bg-image {
+						width: calc(50% - 0.25rem);
+						top: 0;
+
+						&:last-child {
+							left: auto;
+							right: 0;
+							background-position: 65%;
+						}
+					}
+				}
+			}
+
+			img {
+				display: block;
+				margin: 0;
+				max-width: 80%;
+				max-height: calc(100% - 2rem);
+				width: auto;
+				height: auto;
+			}
+		}
+	}
+
+	.options-container {
+		width: 450px;
+		margin-left: auto;
+		background: $brand-light-peach;
+		padding: 5rem 3rem 0 3rem;
+		overflow: hidden;
+
+		.option-group {
+			margin: 3rem 0 0 0;
+			opacity: 0.1;
+			transition: opacity 0.5s ease;
+			min-height: 500px;
+
+			&:nth-last-child(2) {
+				margin-bottom: 14rem;
+			}
+
+			&[data-active='true'] {
+				opacity: 1;
+			}
+
+			.title {
+				font-size: 32px;
+				margin: 0 0 0.75rem 0;
+			}
+
+			.step-label {
+				font-size: 0.7rem;
+				line-height: 1em;
+				display: block;
+				margin: 0 0 2rem 0;
+			}
+
+			.description {
+				line-height: 1.5em;
+				font-size: 18px;
+				font-weight: 300;
+				margin: 0 0 1.5rem 0;
+			}
+
+			.options-list {
+				&.has-images {
+					button {
+						&.selected {
+							&:before {
+								opacity: 1;
+							}
+						}
+						span {
+							&.checkbox {
+								border: none;
+								background: none;
+							}
+						}
+					}
+				}
+
+				> .label {
+					font-size: 18px;
+					line-height: 1.25em;
+					display: block;
+					font-weight: normal;
+					margin: 0 0 1rem 0;
+
+					&.m-t {
+						margin-top: 2rem;
+					}
+				}
+
+				button {
+					width: 100%;
+					display: flex;
+					align-items: center;
+					margin: 0 0 1rem 0;
+					text-align: left;
+					position: relative;
+
+					&[disabled] {
+						cursor: default;
+
+						.checkbox {
+							background-image: none !important;
+							flex: 0 0 10px;
+							height: 10px;
+							background-color: black;
+						}
+					}
+
+					&.selected {
+						.checkbox {
+							opacity: 1;
+							background: black;
+						}
+
+						.label,
+						.extra {
+							color: $color-body;
+						}
+					}
+
+					&:before {
+						content: '';
+						position: absolute;
+						top: -0.5rem;
+						left: -3rem;
+						width: calc(100% + 6rem);
+						height: calc(100% + 1rem);
+						z-index: 0;
+						background: darken($brand-light-peach, 5%);
+						opacity: 0;
+						transition: all 0.25s ease;
+					}
+
+					span {
+						display: block;
+						z-index: 1;
+
+						&.checkbox {
+							border-radius: 100%;
+							flex: 0 0 37px;
+							height: 37px;
+							margin: 0 1rem 0 0;
+							transform: translate3d(0, 0, 0);
+							overflow: hidden;
+							opacity: 0.5;
+							transition: opacity 0.25s ease;
+							border: solid 2px black;
+						}
+
+						&.label,
+						&.extra {
+							font-size: 18px;
+							line-height: 1.25em;
+							color: $color-grey-500;
+							font-weight: 300;
+							transition: color 0.25s ease;
+						}
+
+						&.label {
+						}
+
+						&.extra {
+							margin-left: auto;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.fixed-summary {
+		width: 450px;
+		z-index: 1;
+		padding: 1rem 3rem;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		background: darken($brand-light-peach, 5%);
+
+		&[data-fixed='true'] {
+			position: fixed;
+			bottom: 0;
+			right: 0;
+		}
+
+		&[data-fixed='false'] {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+		}
+
+		.step-label {
+			display: block;
+			z-index: 5;
+			line-height: 1em;
+		}
+
+		.btn__save {
+			line-height: 1em;
+			color: black;
+			display: flex;
+			align-items: center;
+
+			svg {
+				width: 20px;
+				height: auto;
+				display: block;
+				margin: 0 0 0 0.5rem;
+				transform: translateY(2px);
+
+				path {
+					fill: black;
+				}
+			}
+		}
+	}
+}

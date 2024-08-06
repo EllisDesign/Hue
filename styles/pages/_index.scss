@@ -1,0 +1,298 @@
+@use 'sass:math';
+
+.page__index {
+	position: relative;
+	overflow: hidden;
+
+	.section-mb {
+		margin-bottom: 10rem;
+	}
+
+	.gradient-bg {
+		z-index: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	.image-callout {
+		&[data-vertical='true'] {
+			.masthead {
+				flex: 0 0 50%;
+
+				h3,
+				aside {
+					flex: 0 0 100%;
+				}
+
+				aside {
+					margin: auto 0 0 0;
+				}
+			}
+			.image-container {
+				flex: 0 0 50%;
+			}
+		}
+
+		.masthead {
+			flex: 0 0 100%;
+			margin: 0 0 2rem 0;
+
+			h3 {
+				flex: 0 0 25%;
+			}
+
+			aside {
+				max-width: 330px;
+				margin-left: auto;
+
+				p {
+					&:last-child {
+						margin: 0;
+					}
+				}
+			}
+		}
+
+		.image-container {
+			position: relative;
+			text-align: right;
+
+			.wipe {
+				content: '';
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: $brand-light-peach;
+			}
+		}
+	}
+
+	&__cover {
+		overflow: hidden;
+		height: 100vh;
+		position: relative;
+		color: white;
+		display: flex;
+		align-items: flex-start;
+		flex-wrap: wrap;
+
+		.intro-messaging {
+			max-width: 1600px;
+			width: 100%;
+			height: calc(100% - 5.5rem);
+			display: flex;
+			flex-direction: column;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate3d(-50%, -55.5%, 0);
+			z-index: 1;
+			padding: 0.5rem 2rem 2rem 2rem;
+
+			@media #{$screen-md-min} {
+				transform: translate3d(-50%, -50%, 0);
+				height: 100vh;
+			}
+
+			.text-bottom {
+				margin-top: auto;
+			}
+
+			p {
+				flex: 0 0 100%;
+				font-size: 1.5rem;
+				line-height: 1em;
+				margin: 0;
+				font-weight: 100;
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+
+				@media #{$screen-sm-min} {
+					font-size: 3rem;
+				}
+
+				@media #{$screen-md-min} {
+					font-size: 4rem;
+				}
+
+				@media #{$screen-xl-min} {
+					font-size: 5.5rem;
+				}
+
+				span {
+					display: block;
+				}
+			}
+		}
+
+		.top {
+			flex: 0 0 100%;
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			z-index: 1;
+			padding: 1rem 0 0 0;
+
+			.right {
+				order: 2;
+				text-align: right;
+				padding-right: 1rem;
+
+				@media #{$screen-sm-min} {
+					padding-right: 2rem;
+				}
+			}
+
+			.left {
+				order: 1;
+				display: flex;
+				align-items: center;
+				padding-left: 1rem;
+
+				@media #{$screen-sm-min} {
+					padding-left: 2rem;
+				}
+			}
+
+			.tagline {
+				font-size: 0.8rem;
+				line-height: 1em;
+				font-weight: 100;
+
+				@media #{$screen-sm-min} {
+					font-size: 1.25rem;
+				}
+			}
+
+			h1 {
+				font-size: 74px;
+				line-height: 1em;
+				font-weight: 100;
+				margin: 0;
+			}
+		}
+
+		.logo {
+			position: absolute;
+			bottom: 5.5rem;
+			left: 1rem;
+			z-index: 1;
+			width: 50%;
+
+			@media #{$screen-sm-min} {
+				width: 450px;
+				left: 2rem;
+			}
+
+			@media #{$screen-md-min} {
+				bottom: 2rem;
+			}
+
+			svg {
+				width: 100%;
+				height: auto;
+				display: block;
+			}
+		}
+
+		.gradient-wrap {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 0;
+			background: linear-gradient(-45deg, #dfe6e9 15%, #f56a57 30%, #f6b28d, #f6b28d);
+			background-position: 0% 50%;
+			background-size: 400% 400%;
+		}
+
+		.bg-wrap {
+			opacity: 0;
+			z-index: 0;
+			width: 100%;
+			height: 100vh;
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: flex;
+			align-items: flex-end;
+		}
+
+		.bg-image {
+			&:after {
+				content: '';
+				display: block;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 50vh;
+				background: linear-gradient(0, rgba(black, 0.5) 0%, rgba(black, 0) 100%);
+			}
+		}
+
+		.first-scroll-tagline {
+			margin: auto 0 2rem 1rem;
+			width: 100%;
+			z-index: 2;
+
+			@media #{$screen-md-min} {
+				margin: auto 0 60px 2rem;
+			}
+
+			p {
+				font-size: 1rem;
+				line-height: 1.25em;
+				font-weight: 300;
+				margin: 0 1rem 0.25rem 0;
+
+				@media #{$screen-sm-min} {
+					width: 75%;
+				}
+			}
+		}
+	}
+
+	&__natural-boundaries {
+		position: relative;
+		overflow: hidden;
+
+		.outdoor-living {
+			img {
+				width: 100%;
+			}
+		}
+	}
+
+	&__design-summary {
+		position: relative;
+	}
+
+	&__inside-architecture {
+		position: relative;
+
+		.config-callout {
+			height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			div {
+				max-width: math.div($max-width-narrow, 1.5);
+				text-align: center;
+			}
+		}
+	}
+
+	&__building-for-life {
+		position: relative;
+	}
+}

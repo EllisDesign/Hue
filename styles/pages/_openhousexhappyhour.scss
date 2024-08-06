@@ -1,0 +1,248 @@
+.page__openhousexhappyhour {
+	padding: $header-height 0 5rem 0;
+
+	@media #{$screen-sm-min} {
+		//padding: 2rem 0 5rem 0;
+	}
+
+	.grid {
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		max-width: 1920px;
+		margin: auto;
+
+		@media #{$screen-md-min} {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@media #{$screen-lg-min} {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		&__item {
+			width: 100%;
+			height: 800px;
+			position: relative;
+			padding: 2rem 1rem;
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+
+			@media #{$screen-sm-min} {
+				padding: 2rem;
+			}
+
+			@media #{$screen-lg-min} {
+				height: 43vw;
+				max-height: 800px;
+			}
+
+			&:nth-child(2n + 1) {
+				@media only screen and (min-width: 992px) and (max-width: 1399px) {
+					border: solid black;
+					border-width: 0 1px 0 0;
+				}
+			}
+
+			&:nth-child(3n + 2) {
+				@media #{$screen-lg-min} {
+					border: solid black;
+					border-width: 0 1px;
+				}
+			}
+
+			&:after {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 1rem;
+				width: calc(100% - 2rem);
+				height: 1px;
+				background: black;
+
+				@media #{$screen-sm-min} {
+					width: calc(100% - 4rem);
+					left: 2rem;
+				}
+			}
+
+			&--outpost-logo {
+				@media only screen and (max-width: 767px) {
+					height: auto;
+				}
+
+				.image-fade-in {
+					margin: auto;
+					max-width: 325px;
+				}
+			}
+
+			&--hue,
+			&--567,
+			&--elmwood {
+				.btn__rsvp {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate3d(-50%, -50%, 0);
+					z-index: 2;
+					color: white;
+
+					svg {
+						path {
+							fill: white;
+						}
+					}
+				}
+			}
+
+			&--567 {
+				.bottom {
+					margin-top: auto;
+				}
+			}
+
+			&--mobile-height-adjust {
+				height: auto;
+			}
+
+			&--rsvp-right-aligned {
+				h1 {
+					@media #{$screen-md-min} {
+						text-align: right;
+					}
+				}
+			}
+
+			&--rsvp-left-aligned {
+				> div {
+					@media #{$screen-md-min} {
+						text-align: right;
+					}
+				}
+				a {
+					@media #{$screen-md-min} {
+						margin-left: auto;
+					}
+				}
+			}
+
+			.image-fade-in {
+				position: relative;
+				width: 100%;
+
+				&[data-fill='true'] {
+					height: 100%;
+				}
+			}
+
+			h1,
+			p,
+			a {
+				&.small-caps {
+					font-size: 0.9rem;
+					line-height: 1.2em;
+					font-weight: 500;
+					letter-spacing: 1px;
+					text-transform: uppercase;
+				}
+			}
+
+			h1 {
+				@extend .text--sm;
+				text-transform: uppercase;
+				font-weight: 400;
+			}
+
+			p {
+				&:last-child {
+					margin: 0;
+				}
+			}
+
+			a {
+				text-decoration: none;
+				display: inline-block;
+			}
+
+			.hue-logo {
+				width: 50%;
+				height: auto;
+				max-width: 83px;
+				margin: auto 0 0 0;
+
+				path {
+					fill: black;
+				}
+			}
+
+			.rsvp-wrapper {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+
+				h1 {
+					flex: 0 0 100%;
+					text-align: center;
+				}
+			}
+
+			.btn__rsvp {
+				@extend .small-caps;
+				display: flex;
+				align-items: center;
+
+				svg {
+					width: 0.8rem;
+					height: auto;
+					display: block;
+					transform: translateY(1px);
+					margin: 0 0 0 0.5rem;
+				}
+			}
+
+			.screen {
+				position: absolute;
+				top: 2rem;
+				left: 2rem;
+				width: calc(100% - 4rem);
+				height: calc(100% - 4rem);
+				background: black;
+				z-index: 2;
+			}
+
+			.arrow-btn {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate3d(-50%, -50%, 0);
+				z-index: 2;
+				width: calc(100% - 6rem);
+				height: 56px;
+				border-radius: 28px;
+				border: solid 1px white;
+				display: flex;
+				align-items: center;
+				padding: 0 1rem;
+
+				span {
+					display: block;
+					flex: 0 0 auto;
+					color: white;
+				}
+
+				svg {
+					display: block;
+					flex: 0 0 20px;
+					height: auto;
+					margin-left: auto;
+					transform: translateY(2px);
+
+					path {
+						fill: white;
+					}
+				}
+			}
+		}
+	}
+}

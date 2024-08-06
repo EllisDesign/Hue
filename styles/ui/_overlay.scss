@@ -1,0 +1,97 @@
+.global__overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	z-index: 1000;
+	background: white;
+	overflow-x: hidden;
+	overflow-y: auto;
+
+	&__header {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		flex: 0 0 100%;
+		margin: 0 0 2rem 0;
+		padding: 1rem 1rem 0 1rem;
+
+		@media #{$screen-md-min} {
+			padding: 1rem 2rem 0 2rem;
+		}
+
+		span {
+			display: block;
+			font-size: 36px;
+			font-weight: 100;
+		}
+
+		.btn__close {
+			width: 30px;
+			height: 30px;
+			display: flex;
+			flex-direction: column;
+			margin: 0 0 0 auto;
+
+			&:before,
+			&:after {
+				content: '';
+				display: block;
+				background: black;
+				width: 100%;
+				height: 1px;
+			}
+
+			&:before {
+				margin: auto 0 0.2rem 0;
+				transform: translate3d(0, 5.5px, 0) rotate(45deg);
+			}
+
+			&:after {
+				margin: 0.2rem 0 auto 0;
+				transform: translate3d(0, -5.5px, 0) rotate(-45deg);
+			}
+		}
+	}
+
+	.left {
+		flex: 0 0 100%;
+		order: 2;
+
+		@media #{$screen-md-min} {
+			flex: 1;
+			order: 1;
+		}
+	}
+
+	.center {
+		display: flex;
+		justify-content: center;
+		order: 3;
+
+		@media #{$screen-md-min} {
+			order: 2;
+		}
+	}
+
+	.right {
+		flex: 1;
+		display: flex;
+		justify-content: flex-end;
+		order: 1;
+
+		@media #{$screen-md-min} {
+			order: 3;
+		}
+	}
+
+	&__register {
+		form {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+	}
+}

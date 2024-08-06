@@ -1,0 +1,77 @@
+.global__register-form {
+	nav {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		margin: 0 0 1rem 0;
+
+		p,
+		a,
+		> span {
+			flex: 0 0 100%;
+
+			@media #{$screen-md-min} {
+				flex: 0 0 auto;
+			}
+		}
+
+		p,
+		a {
+			border-bottom: solid 1px transparent;
+			padding-bottom: 3px;
+			font-weight: 100;
+		}
+
+		a {
+			text-decoration: none;
+			display: block;
+
+			&:hover {
+				border-color: $color-body;
+			}
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			&[data-active='true'] {
+				border-color: $color-body;
+			}
+		}
+
+		p {
+			margin: 0;
+		}
+
+		> span {
+			display: block;
+			font-size: 0.8rem;
+			color: $color-grey-600;
+
+			@media #{$screen-md-min} {
+				margin: 0 1rem;
+			}
+		}
+	}
+
+	.error-msg {
+		color: red;
+		font-size: 0.8rem;
+		margin: 0;
+	}
+
+	form {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		.btn__register {
+			margin: 0 0 0 auto;
+			width: 100%;
+
+			@media #{$screen-sm-min} {
+				width: auto;
+			}
+		}
+	}
+}

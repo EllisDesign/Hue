@@ -1,0 +1,46 @@
+.page__register {
+	padding: 5rem 0 4rem 0;
+
+	h1 {
+		font-size: 1rem;
+		font-weight: 400;
+	}
+
+	.logo {
+		width: auto;
+		height: 40px;
+		display: block;
+		position: absolute;
+		top: 1rem;
+		left: 1rem;
+
+		@media #{$screen-lg-min} {
+			left: 2rem;
+		}
+
+		svg {
+			width: auto;
+			height: 100%;
+
+			path {
+				fill: black;
+			}
+		}
+	}
+
+	.commercial-masthead {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 2rem;
+
+		h1 {
+			margin: 0;
+		}
+
+		a {
+			display: inline-block;
+			text-decoration: none;
+			border-bottom: solid 2px black;
+		}
+	}
+}
